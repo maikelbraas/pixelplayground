@@ -1,0 +1,61 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#connect-main{
+    display: grid;
+}
+
+#connectPlayerfield{
+    display: grid;
+    grid-template-columns: repeat(7, 80px);
+    place-content: center;
+    place-self: center;
+}
+
+.space{
+    border: 1px solid black;
+    width: 78px;
+    height: 78px;
+    place-content: center;
+    text-align:center;
+    font-size:1rem;
+}
+
+.blue{
+    border: 1px solid blue;
+    background-color: blue;
+    border-radius: 50px;
+    color: blue;
+}
+
+.orange{
+    border: 1px solid orange;
+    background-color: orange;
+    border-radius: 50px;
+    color: orange;
+}
+
+
+
+#winner{
+    position: absolute;
+    display: none;
+    place-content: center;
+    color: green;
+    background-color: forestgreen;
+    width: 100%;
+    height: 100px;
+}
+
+@media screen AND (max-width: 480px) {
+    #connectPlayerfield{
+        grid-template-columns: repeat(7, 40px);
+    }
+
+    .space{
+        width: 38px;
+        height: 38px;
+    }
+}

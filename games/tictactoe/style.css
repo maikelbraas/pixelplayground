@@ -1,0 +1,54 @@
+#tictactoe-main{
+    display: grid;
+    place-items: center;
+    grid-template-rows: 20px 1fr;
+    grid-template-areas:
+    "winner winner winner"
+    "playerO gamefield playerX";
+}
+#winner{
+    grid-area: winner;
+    padding: 20px 0;
+    background-color: limegreen;
+    width: 100%;
+    margin-top: 100px;
+    text-align: center;
+    visibility: hidden;
+}
+
+#playerO{
+    grid-area: playerO;
+}
+
+#gamefield{
+    grid-area: gamefield;
+}
+
+#playerX{
+    grid-area: playerX;
+}
+
+#gamefield{
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+}
+
+#elements{
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3,100px);
+    place-items: center;
+}
+
+.element{
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.space{
+    display: grid;
+    place-items: center;
+    align-items: center;
+    border: 1px solid black;
+}

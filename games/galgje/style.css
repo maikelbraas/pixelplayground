@@ -1,0 +1,31 @@
+#word{
+    display: flex;
+    gap: 5px;
+    justify-self: center;
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
+}
+
+#galgjePlayfield{
+    display: grid;
+    justify-content: center;
+    padding-top: 200px;
+    gap: 20px;
+}
+
+#inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#winner{
+    position: absolute;
+    display: none;
+    place-content: center;
+    color: green;
+    background-color: limegreen;
+    margin: 0 calc(50% - 150px);
+    width: 300px;
+    height: 100px;
+}
