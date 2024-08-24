@@ -121,6 +121,7 @@ main h1{
 }
 .game img{
     width: 100%;
+    height: 200px;
     border-bottom: 1px solid black;
 }
 .game b{
