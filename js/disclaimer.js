@@ -18,9 +18,11 @@ else {
         const agree = document.getElementById('agree');
         const disagree = document.getElementById('disagree');
         let now = Date.now();
-        console.log(now.toLocaleString());
+        var newDateObj = new Date(now.getTime() + 20 * 1000);
+        now.setTime(now.getTime() + (20 * 1000))
+        console.log(newDateObj.toISOString());
         agree.addEventListener('click', () => {
-            document.cookie = `visitSite=iagree; secure=true; max-age=${now}; sameSite=strict;`
+            document.cookie = `visitSite=iagree; secure=true; max-age=${newDateObj.toISOString()}; sameSite=strict;`
             document.getElementById('disclaimer').style.display = 'none';
         })
 
