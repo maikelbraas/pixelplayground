@@ -1,4 +1,7 @@
-let win = open(location, '_self');
+document.cookie = 'visit=true;';
+let win;
+if (!document.cookie.includes('visit'))
+    win = open(location, '_self');
 if (document.cookie.includes('visitSite=iagree'))
     document.getElementById('disclaimer').style.display = 'none';
 else {
