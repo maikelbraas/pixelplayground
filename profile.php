@@ -43,7 +43,7 @@ if(isset($_POST['change_password'])){
         <h3>Change username:</h3>
         <form method="post">
             <label for="new-username">New username: </label><br>
-            <input type="text" name="new-username" value="<?= $user['gebruikersnaam']; ?>" autocomplete="new-username">
+            <input type="text" name="new-username" value="<?= $user['gebruikersnaam']; ?>" autocomplete="username">
             <input type="submit" value="Change" name="change_username">
         </form>
     </section>
