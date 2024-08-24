@@ -18,7 +18,7 @@ else {
         const agree = document.getElementById('agree');
         const disagree = document.getElementById('disagree');
         let now = new Date();
-        now.setTime(now.getTime() + (20 * 1000))
+        now.setTime(now.getTime() + (60 * 60 * 1000))
         console.log(now.toUTCString());
         agree.addEventListener('click', () => {
             document.cookie = `visitSite=iagree; secure=true; Max-Age=${now.toUTCString()}; sameSite=strict;`
