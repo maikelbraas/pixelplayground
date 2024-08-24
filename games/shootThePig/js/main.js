@@ -247,7 +247,7 @@ window.onload = function(){
 		ctx.fillText("Press enter to restart the game.", w/2-measureEnter/2, h/2+30);
 		clear();
         let highscore = {highscore: kills*100, game_id: 5};
-        fetch('../highscore/highscore.php', {
+        fetch('../../highscore/highscore.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
