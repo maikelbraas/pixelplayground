@@ -11,6 +11,13 @@
     src: url(./NeonPixel7-XVx2.ttf);
 }
 
+#disclaimer{
+    display: flex;
+    color: maroon;
+    position: absolute;
+    place-self: center;
+}
+
 *{
     margin: 0;
     padding: 0;
