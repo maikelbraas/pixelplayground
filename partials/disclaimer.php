@@ -5,9 +5,22 @@
     <b>Encryption hasn't been thought at this stage.</b>
     <b>If you create an account be aware of this. All password are visible.</b>
     <h2>You're be reminded every hour after accepting!</h2>
-    <div>
-        <button id='agree'>I agree</button>
-        <button id='disagree'>I do not agree</button>
-    </div>
+    <p id="timer">You can agree or disagree in: 5</p>
+    <script>
+        let i = 4;
+        let interval = setInterval(() => {
+            document.getElementById('timer').innerHTML = "You can agree or disagree in: " + i;
+            i--;
+        }, 1000);
+        setTimeout(() => {
+        document.getElementById('disclaimer').innerHTML += `
+        <div>
+            <button id='agree'>I agree</button>
+            <button id='disagree'>I do not agree</button>
+        </div>
+        `;
+        clearInterval(interval);
+        }, 5000)
+    </script>
     </div>
 </div>
