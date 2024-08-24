@@ -17,7 +17,7 @@ else {
             `;
         var now = new Date();
         var time = now.getTime();
-        var expireTime = time + 20 * 1000;
+        var expireTime = time + 60 * 60 * 1000;
         now.setTime(expireTime);
         console.log(now.toUTCString());
         agree.addEventListener('click', () => {
