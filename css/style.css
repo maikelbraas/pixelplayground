@@ -132,8 +132,7 @@ main h1{
 
 .game:hover {
     border: 1px solid #5CA4A9;
-    background-color: #569fa4;
-    color: #080807 !important;
+    background-color: #423f0b;
 }
 
 .game p, .game h2{
