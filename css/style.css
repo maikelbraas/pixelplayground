@@ -58,7 +58,7 @@ p, b, a{
 }
 
 header, footer{
-    height: calc(10vh - 1px);
+    min-height: calc(10vh - 1px);
     background-color: #ED6A5A;
     bottom: 0;
 }
@@ -237,4 +237,12 @@ footer{
         justify-content: flex-start;
         gap: 20px;
     }
+
+    nav{
+        flex-direction: column;
+    }
+    nav a{
+        border-bottom: 1px solid black;
+    }
+
 }
