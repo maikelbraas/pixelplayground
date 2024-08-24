@@ -15,13 +15,13 @@ else {
                 <button id='disagree'>I do not agree, close window</button>
             </div>
             `;
-        const agree = document.getElementById('agree');
-        const disagree = document.getElementById('disagree');
-        let now = new Date();
-        var newDateObj = new Date(now.getTime() + 20 * 1000);
-        console.log(newDateObj.toISOString());
+        var now = new Date();
+        var time = now.getTime();
+        var expireTime = time + 20 * 1000;
+        now.setTime(expireTime);
+        console.log(now.toUTCString());
         agree.addEventListener('click', () => {
-            document.cookie = `visitSite=iagree; secure=true; max-age=${newDateObj.toISOString()}; sameSite=strict;`
+            document.cookie = `visitSite=iagree; secure=true; max-age=${now.toUTCString()}; sameSite=strict;`
             document.getElementById('disclaimer').style.display = 'none';
         })
 
