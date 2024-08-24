@@ -4,10 +4,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href='css/global.css' rel='stylesheet' type='text/css' />
         <title>Global Trip Games</title>
-        <script src='javascript/main_o.js'></script>
-        <script src='javascript/Player_o.js'></script>
-        <script src='javascript/Ball_o.js'></script>
-        <script src='javascript/Bullet_o.js'></script>
+        <script src='javascript/main.js'></script>
+        <script src='javascript/Player.js'></script>
+        <script src='javascript/Ball.js'></script>
+        <script src='javascript/Bullet.js'></script>
     </head>
     <body>
         <canvas id="canvas" height="500" width="800">
