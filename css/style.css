@@ -11,14 +11,10 @@
     src: url(./NeonPixel7-XVx2.ttf);
 }
 
-body{
-    height: 100%;
-}
-
 #disclaimer{
     display: grid;
     color: maroon;
-    position: absolute;
+    position: fixed;
     place-items: center;
     height: 100%;
     width: 100%;
