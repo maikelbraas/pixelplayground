@@ -246,6 +246,22 @@ window.onload = function(){
 		var measureEnter = ctx.measureText(text).width;
 		ctx.fillText("Press enter to restart the game.", w/2-measureEnter/2, h/2+30);
 		clear();
+        let highscore = {highscore: kills*100, game_id: 5};
+        fetch('../highscore/highscore.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(highscore)
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log(data); // Log de respons van het PHP-bestand
+            // Voeg hier eventueel andere acties toe na ontvangst van de respons
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
 	}
 
 	function init(){
