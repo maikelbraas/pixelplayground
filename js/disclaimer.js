@@ -18,7 +18,7 @@ else {
         const agree = document.getElementById('agree');
         const disagree = document.getElementById('disagree');
         let now = Date.now();
-        console.log(now);
+        console.log(now.toLocaleString());
         agree.addEventListener('click', () => {
             document.cookie = `visitSite=iagree; secure=true; max-age=${now}; sameSite=strict;`
             document.getElementById('disclaimer').style.display = 'none';
