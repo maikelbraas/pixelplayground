@@ -17,6 +17,11 @@
     color: #d5d1dd;
     border-color: #569fa4;
 }
+textarea:focus, input:focus{
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
 
 input, button{
     background-color:#080807;
