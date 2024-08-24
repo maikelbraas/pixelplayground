@@ -16,8 +16,8 @@
         document.getElementById('timer').style.display = 'none';
         document.getElementById('inner').innerHTML += `
         <div>
-            <button id='agree'>I agree</button>
-            <button id='disagree'>I do not agree</button>
+            <button id='agree'>I agree, continue to site</button>
+            <button id='disagree'>I do not agree, close window</button>
         </div>
         `;
         clearInterval(interval);
