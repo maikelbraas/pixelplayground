@@ -11,6 +11,7 @@ window.onload = function () {
 	var fps = 10;
 
 	var start = false;
+	var gameOverStatus = false;
 	var move_loop;
 	var createPigs_loop;
 	var collsion_loop;
@@ -104,9 +105,9 @@ window.onload = function () {
 		powerMeter.draw(cannon.vel);
 
 		if (lifes <= 0 && start) {
-			showGameoverScreen();
 			gameOver();
 		};
+		if (gameOverStatus) showGameoverScreen();
 		requestAnimationFrame(animationloop);
 	}
 
@@ -252,6 +253,7 @@ window.onload = function () {
 	}
 
 	function gameOver() {
+		gameOverStatus = true;
 		let highscore = { highscore: kills * 100, game_id: 5 };
 		fetch('/games/highscore/highscore.php', {
 			method: 'POST',
@@ -279,6 +281,7 @@ window.onload = function () {
 		swing_loop = setInterval(swingClouds, 30);
 		clouds_loop = setInterval(spawnClouds, 30);
 		start = true;
+		gameOverStatus = false;
 	}
 
 	function clear() {
