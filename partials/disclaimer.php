@@ -1,5 +1,5 @@
 <div id='disclaimer'>
-    <div>
+    <div id="inner">
     <h1>DO NOT FILL IN REAL DATA</h1>
     <b>This site is not secure, it is an example website for first year programming students.</b>
     <b>Encryption hasn't been thought at this stage.</b>
@@ -13,7 +13,8 @@
             i--;
         }, 1000);
         setTimeout(() => {
-        document.getElementById('disclaimer').innerHTML += `
+        document.getElementById('timer').style.display = 'none';
+        document.getElementById('inner').innerHTML += `
         <div>
             <button id='agree'>I agree</button>
             <button id='disagree'>I do not agree</button>
