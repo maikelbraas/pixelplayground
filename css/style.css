@@ -215,7 +215,7 @@ footer{
     gap: 20px;
 }
 
-.message h3, .message p, .message h2{
+.message{
     text-align: center;
 }
 
