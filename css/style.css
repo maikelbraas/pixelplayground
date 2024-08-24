@@ -96,7 +96,6 @@ header, footer{
     min-height: calc(10vh - 1px);
     background-color: #212529;
     color: #d5d1dd;
-    bottom: 0;
 }
 
 header{
