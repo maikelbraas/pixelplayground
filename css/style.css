@@ -67,7 +67,7 @@ header, footer{
 header{
     display: grid;
     align-items: center;
-    border-bottom: 1px solid #5CA4A9;
+    border-bottom: 1px solid #569fa4;
 }
 
 nav{
@@ -131,7 +131,7 @@ main h1{
 }
 
 .game:hover {
-    border: 1px solid #5CA4A9;
+    border: 1px solid #569fa4;
     background-color: #212529;
 }
 
@@ -150,7 +150,7 @@ footer{
     align-items: center;
     justify-content: space-around;
     padding: 0 20px;
-    border-top: 1px solid #5CA4A9;
+    border-top: 1px solid #569fa4;
 }
 
 #search-friends, #friend-request-send, #friend-request{
