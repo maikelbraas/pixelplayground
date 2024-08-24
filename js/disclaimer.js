@@ -31,6 +31,7 @@ if (document.cookie.includes('visitSite=iagree')) {
         })
 
         disagree.addEventListener('click', () => {
+            document.cookie = 'visit=false;';
             window.close();
         })
         clearInterval(interval);
