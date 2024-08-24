@@ -19,7 +19,7 @@ else {
         const disagree = document.getElementById('disagree');
 
         agree.addEventListener('click', () => {
-            document.cookie = `visitSite=iagree; secure=true; Max-Age=${Date.now() + 20 * 1000}; sameSite=strict;`
+            document.cookie = `visitSite=iagree; secure=true; Max-Age=${Date.now() + (20 * 1000)}; sameSite=strict;`
             document.getElementById('disclaimer').style.display = 'none';
         })
 
