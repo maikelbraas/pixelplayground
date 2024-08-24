@@ -1,6 +1,6 @@
 
    <footer>
-      © Copyright 2024
+      Student example website
    </footer> 
 </body>
 </html>
