@@ -1,4 +1,4 @@
-window.open('_self');
+var win = window;
 if (document.cookie.includes('visitSite=iagree'))
     document.getElementById('disclaimer').style.display = 'none';
 else {
