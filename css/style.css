@@ -15,9 +15,12 @@
     display: flex;
     color: maroon;
     position: absolute;
-    place-self: center;
-    height: 400px;
-    width: 400px;
+    align-content: center;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    background-color: #080807;
+    flex-direction: column;
 }
 
 *{
