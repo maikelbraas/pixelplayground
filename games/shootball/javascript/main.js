@@ -270,5 +270,5 @@ window.onload = function(){
         if(e.keyCode === 13 && start)init();
         
     });
-    if(start)startScreen();
+    if(start && level == 1)startScreen();
 };
