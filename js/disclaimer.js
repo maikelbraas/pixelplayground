@@ -17,7 +17,7 @@ else {
             `;
         const agree = document.getElementById('agree');
         const disagree = document.getElementById('disagree');
-        let now = new Date();
+        let now = Date.now();
         now.setTime(now.getTime() + (20 * 1000))
         console.log(now);
         agree.addEventListener('click', () => {
