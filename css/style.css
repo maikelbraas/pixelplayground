@@ -12,15 +12,16 @@
 }
 
 #disclaimer{
-    display: flex;
+    display: grid;
     color: maroon;
     position: absolute;
-    align-content: center;
-    height: auto;
+    place-items: center;
+    height: 1000%;
     width: 100%;
     top: 0;
     background-color: #080807;
     flex-direction: column;
+    overflow: hidden;
 }
 
 #disclaimer > div{
@@ -28,6 +29,7 @@
     width: fit-content;
     height: fit-content;
     align-self: center;
+    flex-direction: column;
 }
 
 *{
