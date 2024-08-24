@@ -23,7 +23,7 @@ $games = [
             <article class="game">
                 <h2><?= $game->name ?></h2>
                 <img src="images/<?= $game->name ?>.png" alt="">
-                <p>Highscore aan? <?php if($game->highscorecapable) echo 'Ja'; else echo 'Nee'; ?></p>
+                <p>Worden scores opgeslagen: <?php if($game->highscorecapable) echo 'Ja'; else echo 'Nee'; ?></p>
             </article>
         </a>
         <?php } ?>
