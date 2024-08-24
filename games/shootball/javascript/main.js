@@ -219,7 +219,7 @@ window.onload = function(){
         ctx.font="30pt 'Press Start 2P'";
         var textWidth = ctx.measureText('You win!');
         ctx.fillText("You win!", (w-textWidth.width) /2, 60 );
-        ctx.fillText("If you want to move to the second level press 'Spacebar'", 10, 130 );
+        ctx.fillText("If you want to move to the second level press 'Enter'", 10, 130 );
         ctx.fillText("If not, thanks for playing!", 10, 160 );
         ctx.font="20pt Arial";
         if(level == 1)level = 2;
