@@ -103,7 +103,7 @@ window.onload = function () {
 		}
 		powerMeter.draw(cannon.vel);
 
-		if (lifes <= 0) gameOver();
+		if (lifes <= 0 && start) gameOver();
 		requestAnimationFrame(animationloop);
 	}
 
@@ -249,27 +249,24 @@ window.onload = function () {
 	}
 
 	function gameOver() {
-		if (start) {
-			let highscore = { highscore: kills * 100, game_id: 5 };
-			fetch('/games/highscore/highscore.php', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify(highscore)
+		start = false;
+		let highscore = { highscore: kills * 100, game_id: 5 };
+		fetch('/games/highscore/highscore.php', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(highscore)
+		})
+			.then(response => response.text())
+			.then(data => {
+				console.log(data);
+				showGameoverScreen();
 			})
-				.then(response => response.text())
-				.then(data => {
-					console.log(data);
-					start = false;
-					showGameoverScreen();
-				})
-				.catch(error => {
-					console.error('Error:', error);
-					start = false;
-					showGameoverScreen();
-				});
-		}
+			.catch(error => {
+				console.error('Error:', error);
+				showGameoverScreen();
+			});
 	}
 
 	function init() {
