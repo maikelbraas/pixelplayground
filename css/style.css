@@ -18,6 +18,10 @@
     border-color: #569fa4;
 }
 
+input, button{
+    background-color:#080807;
+}
+
 .darkmode{
     background-color: #080807;
     color: #ebebea;
