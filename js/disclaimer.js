@@ -10,12 +10,11 @@ else {
     setTimeout(() => {
         document.getElementById('timer').style.display = 'none';
         document.getElementById('inner').innerHTML += `
-<div>
-    <button id='agree'>I agree, continue to site</button>
-    <button id='disagree'>I do not agree, close window</button>
-</div>
-`;
-
+            <div>
+                <button id='agree'>I agree, continue to site</button>
+                <button id='disagree'>I do not agree, close window</button>
+            </div>
+            `;
         const agree = document.getElementById('agree');
         const disagree = document.getElementById('disagree');
 
