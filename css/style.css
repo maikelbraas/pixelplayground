@@ -16,6 +16,8 @@
     color: maroon;
     position: absolute;
     place-self: center;
+    height: 400px;
+    width: 400px;
 }
 
 *{
