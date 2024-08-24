@@ -20,6 +20,7 @@
 
 input, button{
     background-color:#080807;
+    padding: 5px;
 }
 
 .darkmode{
