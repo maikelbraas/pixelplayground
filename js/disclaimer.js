@@ -17,7 +17,7 @@ else {
             `;
         const agree = document.getElementById('agree');
         const disagree = document.getElementById('disagree');
-        let now = Date.now();
+        let now = new Date();
         var newDateObj = new Date(now.getTime() + 20 * 1000);
         now.setTime(now.getTime() + (20 * 1000))
         console.log(newDateObj);
