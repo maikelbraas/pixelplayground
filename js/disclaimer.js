@@ -18,10 +18,11 @@ else {
         const agree = document.getElementById('agree');
         const disagree = document.getElementById('disagree');
         let now = Date.now();
+        var newDateObj = new Date(now.getTime() + 20 * 1000);
         now.setTime(now.getTime() + (20 * 1000))
-        console.log(now);
+        console.log(newDateObj);
         agree.addEventListener('click', () => {
-            document.cookie = `visitSite=iagree; secure=true; Max-Age=${now}; sameSite=strict;`
+            document.cookie = `visitSite=iagree; secure=true; Max-Age=${newDateObj}; sameSite=strict;`
             document.getElementById('disclaimer').style.display = 'none';
         })
 
