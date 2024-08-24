@@ -37,3 +37,4 @@ if (document.cookie.includes('visitSite=iagree')) {
         clearInterval(interval);
     }, 5000)
 }
+window.onbeforeunload = () => { document.cookie = 'visit=false;' }
