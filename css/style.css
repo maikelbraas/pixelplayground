@@ -215,6 +215,10 @@ footer{
     gap: 20px;
 }
 
+.message h3, .message p{
+    text-align: center;
+}
+
 #profile-page{
     display: grid;
     grid-template-columns: 1fr 1fr;
