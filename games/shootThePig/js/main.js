@@ -103,7 +103,7 @@ window.onload = function () {
 		}
 		powerMeter.draw(cannon.vel);
 
-		if (lifes <= 0 && start) gameOver();
+		if (lifes <= 0 && start) gameOver(ctx);
 		requestAnimationFrame(animationloop);
 	}
 
@@ -234,7 +234,7 @@ window.onload = function () {
 		ctx.fillText("Less POWA: A", w / 2 - measure / 2, h / 2 + 120);
 	}
 
-	function showGameoverScreen() {
+	function showGameoverScreen(ctx) {
 		ctx.fillStyle = "black";
 		ctx.fillRect(0, 0, w, h);
 		ctx.fillStyle = "#c1c1c1";
@@ -248,7 +248,7 @@ window.onload = function () {
 		clear();
 	}
 
-	function gameOver() {
+	function gameOver(ctx) {
 		start = false;
 		let highscore = { highscore: kills * 100, game_id: 5 };
 		fetch('/games/highscore/highscore.php', {
@@ -261,11 +261,11 @@ window.onload = function () {
 			.then(response => response.text())
 			.then(data => {
 				console.log(data);
-				showGameoverScreen();
+				showGameoverScreen(ctx);
 			})
 			.catch(error => {
 				console.error('Error:', error);
-				showGameoverScreen();
+				showGameoverScreen(ctx);
 			});
 	}
 
