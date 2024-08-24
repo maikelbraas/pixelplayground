@@ -21,7 +21,7 @@ else {
         now.setTime(expireTime);
         console.log(now.toUTCString());
         agree.addEventListener('click', () => {
-            document.cookie = `visitSite=iagree; secure=true; expires=${now.toUTCString()}; sameSite=strict; max-age=session;`
+            document.cookie = `visitSite=iagree; secure=true; expires=${now.toUTCString()}; sameSite=strict;`
             document.getElementById('disclaimer').style.display = 'none';
         })
 
