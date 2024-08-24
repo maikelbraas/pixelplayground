@@ -234,8 +234,7 @@ window.onload = function () {
 		ctx.fillText("Less POWA: A", w / 2 - measure / 2, h / 2 + 120);
 	}
 
-	function gameOver() {
-
+	function showGameoverScreen() {
 		ctx.fillStyle = "black";
 		ctx.fillRect(0, 0, w, h);
 		ctx.fillStyle = "#c1c1c1";
@@ -247,8 +246,10 @@ window.onload = function () {
 		var measureEnter = ctx.measureText(text).width;
 		ctx.fillText("Press enter to restart the game.", w / 2 - measureEnter / 2, h / 2 + 30);
 		clear();
+	}
+
+	function gameOver() {
 		if (start) {
-			start = false;
 			let highscore = { highscore: kills * 100, game_id: 5 };
 			fetch('/games/highscore/highscore.php', {
 				method: 'POST',
@@ -260,9 +261,13 @@ window.onload = function () {
 				.then(response => response.text())
 				.then(data => {
 					console.log(data);
+					start = false;
+					showGameoverScreen();
 				})
 				.catch(error => {
 					console.error('Error:', error);
+					start = false;
+					showGameoverScreen();
 				});
 		}
 	}
