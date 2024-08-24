@@ -1,4 +1,4 @@
-window.onload = function(){
+window.onload = function () {
 	var canvas = document.getElementById("canvas");
 	var ctx = canvas.getContext("2d");
 
@@ -57,15 +57,15 @@ window.onload = function(){
 	var pig3 = new Image();
 	pig3.src = 'img/pig4.png';
 
-	var animationloop = function draw(){
+	var animationloop = function draw() {
 		field.draw();
 		//Draw sky
 		sky.draw();
 
 		//Parabola line
-		if(cheatOn){
+		if (cheatOn) {
 			ctx.beginPath();
-			ctx.strokeStyle="white";
+			ctx.strokeStyle = "white";
 			ctx.moveTo(parabolaStartX, parabolaStartY);
 			ctx.quadraticCurveTo(parabolaMiddleX, parabolaMiddleY, parabolaEndX, parabolaEndY);
 			ctx.shadowColor = "red";
@@ -75,17 +75,17 @@ window.onload = function(){
 		}
 		//Draw ground
 		//draw clouds
-		for(var i = 0; i < clouds.length; i++){
+		for (var i = 0; i < clouds.length; i++) {
 			clouds[i].draw();
 		}
-        //Misc
+		//Misc
 		ctx.fillStyle = "black";
-		ctx.font="12px Arial";
+		ctx.font = "12px Arial";
 		ctx.fillText("Lifes left: " + lifes, 10, 20);
-		ctx.fillText("Kills: " + kills, w-100, 20);
-		ctx.fillText("Shots fired: " + shots, w/2, 20);
+		ctx.fillText("Kills: " + kills, w - 100, 20);
+		ctx.fillText("Shots fired: " + shots, w / 2, 20);
 		//draw bullet
-		if(bullet != null || bullet != undefined){
+		if (bullet != null || bullet != undefined) {
 			bullet.draw();
 		}
 		//draw cannon
@@ -94,179 +94,179 @@ window.onload = function(){
 		platform.draw();
 
 		//draw pigs
-		for(var i = 0; i < pigs.length; i++){
+		for (var i = 0; i < pigs.length; i++) {
 			pigs[i].draw();
 		}
 		//draw particles
-		for(var i = 0; i < particles.length; i++){
+		for (var i = 0; i < particles.length; i++) {
 			particles[i].draw();
 		}
 		powerMeter.draw(cannon.vel);
 
-		if(lifes <= 0)gameOver();
+		if (lifes <= 0) gameOver();
 		requestAnimationFrame(animationloop);
 	}
 
 
 
-	function move(){
+	function move() {
 
-		if(bullet != null || bullet != undefined)
+		if (bullet != null || bullet != undefined)
 			bullet.move();
 
-		for(var i = 0; i < particles.length; i++){
+		for (var i = 0; i < particles.length; i++) {
 			particles[i].move();
 		}
-		for(var i = 0; i < pigs.length; i++){
+		for (var i = 0; i < pigs.length; i++) {
 			pigs[i].move();
 		}
 	}
 
 	//clouds
 
-	function swingClouds(){
-		for(var i = 0; i < clouds.length; i++){
+	function swingClouds() {
+		for (var i = 0; i < clouds.length; i++) {
 			clouds[i].swing();
 		}
 
-		for(var i = 0; i < clouds.length; i++){
-			if(clouds[i].x < -200){
+		for (var i = 0; i < clouds.length; i++) {
+			if (clouds[i].x < -200) {
 				clouds.splice(i, 1);
 			}
 		}
-		if(cheatOn){
-		//Visible parabola
-			var removeVelocityValue = cannon.vel * (90-cannon.degree)/80;
+		if (cheatOn) {
+			//Visible parabola
+			var removeVelocityValue = cannon.vel * (90 - cannon.degree) / 80;
 			var countStepsToEnd = parabolaStartY;
-			while(h > countStepsToEnd){
+			while (h > countStepsToEnd) {
 				countSteps++;
 				countStepsToEnd -= removeVelocityValue;
 				removeVelocityValue -= 1;
 			}
 
-			parabolaStartX = cannon.x + cannon.width/2;
-			parabolaStartY = cannon.y+cannon.height/3;
-			parabolaEndX = parabolaStartX + (countSteps * (cannon.vel * cannon.degree/45));
+			parabolaStartX = cannon.x + cannon.width / 2;
+			parabolaStartY = cannon.y + cannon.height / 3;
+			parabolaEndX = parabolaStartX + (countSteps * (cannon.vel * cannon.degree / 45));
 			parabolaEndY = h;
-			parabolaMiddleX = parabolaStartX + ((countSteps/2) * (cannon.vel * cannon.degree/45));
-			parabolaMiddleY = parabolaStartY - ((countSteps/2) * (cannon.vel * (90-cannon.degree)/80));
+			parabolaMiddleX = parabolaStartX + ((countSteps / 2) * (cannon.vel * cannon.degree / 45));
+			parabolaMiddleY = parabolaStartY - ((countSteps / 2) * (cannon.vel * (90 - cannon.degree) / 80));
 			countSteps = 0;
 		}
 	}
 
 
-	function spawnClouds(){
+	function spawnClouds() {
 
-		if(timer_cloud <= 0){
-			timer_cloud = Math.floor(Math.random()*50);
-		if(clouds.length < 5){
-    			clouds.push(new Cloud(ctx, w));
-    		// setTimeout(200);
-      }
-    }else{
-    	timer_cloud--;
-    }
+		if (timer_cloud <= 0) {
+			timer_cloud = Math.floor(Math.random() * 50);
+			if (clouds.length < 5) {
+				clouds.push(new Cloud(ctx, w));
+				// setTimeout(200);
+			}
+		} else {
+			timer_cloud--;
+		}
 	}
 
-	function collision(){
-			if(bullet != null || bullet != undefined)
-			for(var p = 0; p < pigs.length; p++){
-				if(bullet.x+bullet.radius >= pigs[p].x &&
-					bullet.y+bullet.radius >= pigs[p].y &&
-					bullet.x-bullet.radius <= pigs[p].x+pigs[p].width &&
-					bullet.y-bullet.radius <= pigs[p].y+pigs[p].height){
-						createParticles(bullet);
-						kills += 1;
-						bullet = null;
-						pigs.splice(p, 1);
-						platform.calcHeight();
-						cannon.y = platform.y - cannon.height;
-						break;
+	function collision() {
+		if (bullet != null || bullet != undefined)
+			for (var p = 0; p < pigs.length; p++) {
+				if (bullet.x + bullet.radius >= pigs[p].x &&
+					bullet.y + bullet.radius >= pigs[p].y &&
+					bullet.x - bullet.radius <= pigs[p].x + pigs[p].width &&
+					bullet.y - bullet.radius <= pigs[p].y + pigs[p].height) {
+					createParticles(bullet);
+					kills += 1;
+					bullet = null;
+					pigs.splice(p, 1);
+					platform.calcHeight();
+					cannon.y = platform.y - cannon.height;
+					break;
 				}
-		}
+			}
 		//Remove particles that fall too low.
-		for(var i = 0; i < particles.length; i++){
-			if(particles[i].y > h){
+		for (var i = 0; i < particles.length; i++) {
+			if (particles[i].y > h) {
 				particles.splice(i, 1);
 			}
 		}
 		//remove pigs that didn't get hit
-		for(var i = 0; i < pigs.length; i++){
-			if(pigs[i].x < 100){
+		for (var i = 0; i < pigs.length; i++) {
+			if (pigs[i].x < 100) {
 				pigs.splice(i, 1);
 				lifes -= 1;
 			}
 		}
 
-			if((bullet != null || bullet != undefined) && bullet.y > h)
-				bullet = null;
+		if ((bullet != null || bullet != undefined) && bullet.y > h)
+			bullet = null;
 	}
 
-	function createBullet(){
-		if(bullet == null || bullet == undefined)
+	function createBullet() {
+		if (bullet == null || bullet == undefined)
 			bullet = new Bullet(ctx, cannon);
 	}
 
-	function createPigs(){
-		if(timer_pig <= 0){
-			timer_pig = Math.floor(Math.random()*500)+50;
+	function createPigs() {
+		if (timer_pig <= 0) {
+			timer_pig = Math.floor(Math.random() * 500) + 50;
 			pigs.push(new Pig(ctx, w, h, pig1, pig2, pig3));
-		}else{
+		} else {
 			timer_pig -= 1;
 		}
 	}
 
-	function createParticles(bullet){
-		for(var i = 0; i < 10; i++){
+	function createParticles(bullet) {
+		for (var i = 0; i < 10; i++) {
 			particles.push(new Particle(ctx, bullet, backon));
 		}
 	}
 
-	function startScreen(){
+	function startScreen() {
 		ctx.fillStyle = "black";
-		ctx.font="30px Arial";
+		ctx.font = "30px Arial";
 		var text = "Press enter to start the game.";
 		var measure = ctx.measureText(text).width;
-		ctx.fillText("Press enter to start the game.", w/2-measure/2, h/2);
-		ctx.fillText("Move up with: W", w/2-measure/2, h/2+30);
-		ctx.fillText("Move down with: S", w/2-measure/2, h/2+60);
-		ctx.fillText("More POWA: D", w/2-measure/2, h/2+90);
-		ctx.fillText("Less POWA: A", w/2-measure/2, h/2+120);
+		ctx.fillText("Press enter to start the game.", w / 2 - measure / 2, h / 2);
+		ctx.fillText("Move up with: W", w / 2 - measure / 2, h / 2 + 30);
+		ctx.fillText("Move down with: S", w / 2 - measure / 2, h / 2 + 60);
+		ctx.fillText("More POWA: D", w / 2 - measure / 2, h / 2 + 90);
+		ctx.fillText("Less POWA: A", w / 2 - measure / 2, h / 2 + 120);
 	}
 
-	function gameOver(){
-		ctx.fillStyle = "black";
-		ctx.fillRect(0, 0, w, h);
-		ctx.fillStyle = "#c1c1c1";
-		ctx.font="60px Arial";
-		var text = "You Lost!";
-		var measure = ctx.measureText(text).width;
-		ctx.fillText("You Lost", w/2-measure/2, h/2-30);
-		var text = "Press enter to restart the game.";
-		var measureEnter = ctx.measureText(text).width;
-		ctx.fillText("Press enter to restart the game.", w/2-measureEnter/2, h/2+30);
-		clear();
-        let highscore = {highscore: kills*100, game_id: 5};
-        fetch('../../highscore/highscore.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(highscore)
-        })
-        .then(response => response.text())
-        .then(data => {
-            console.log(data); // Log de respons van het PHP-bestand
-            // Voeg hier eventueel andere acties toe na ontvangst van de respons
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
+	function gameOver() {
+		let highscore = { highscore: kills * 100, game_id: 5 };
+		fetch('/games/highscore/highscore.php', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(highscore)
+		})
+			.then(response => response.text())
+			.then(data => {
+				console.log(data); // Log de respons van het PHP-bestand
+				// Voeg hier eventueel andere acties toe na ontvangst van de respons
+				ctx.fillStyle = "black";
+				ctx.fillRect(0, 0, w, h);
+				ctx.fillStyle = "#c1c1c1";
+				ctx.font = "60px Arial";
+				var text = "You Lost!";
+				var measure = ctx.measureText(text).width;
+				ctx.fillText("You Lost", w / 2 - measure / 2, h / 2 - 30);
+				var text = "Press enter to restart the game.";
+				var measureEnter = ctx.measureText(text).width;
+				ctx.fillText("Press enter to restart the game.", w / 2 - measureEnter / 2, h / 2 + 30);
+				clear();
+			})
+			.catch(error => {
+				console.error('Error:', error);
+			});
 	}
 
-	function init(){
+	function init() {
 		createPigs();
-		clouds.push(new Cloud(ctx, Math.floor(Math.random()*h*0.8) +1, w));
+		clouds.push(new Cloud(ctx, Math.floor(Math.random() * h * 0.8) + 1, w));
 		requestAnimationFrame(animationloop);
 		move_loop = setInterval(move, fps);
 		collision_loop = setInterval(collision, fps);
@@ -276,7 +276,7 @@ window.onload = function(){
 		start = true;
 	}
 
-	function clear(){
+	function clear() {
 		pigs = [];
 		clouds = [];
 		bullets = [];
@@ -292,37 +292,37 @@ window.onload = function(){
 		start = false;
 	}
 
-	window.addEventListener("keyup", function(e){
-		if(e.keyCode == 13 && !start){
+	window.addEventListener("keyup", function (e) {
+		if (e.keyCode == 13 && !start) {
 			init();
 		}
-		if(e.keyCode == 32){
+		if (e.keyCode == 32) {
 			createBullet();
 		}
-		if(e.keyCode === 192){
-			if(cheatOn){
+		if (e.keyCode === 192) {
+			if (cheatOn) {
 				cheatOn = false;
-			}else{
+			} else {
 				cheatOn = true;
 			}
 		}
 	})
 
-	window.addEventListener("keydown", function(e){
-		if(e.keyCode == 87){
-			cannon.rotate("up");	
+	window.addEventListener("keydown", function (e) {
+		if (e.keyCode == 87) {
+			cannon.rotate("up");
 		}
-		if(e.keyCode == 83){
+		if (e.keyCode == 83) {
 			cannon.rotate("down");
 		}
-		if(e.keyCode == 68){
+		if (e.keyCode == 68) {
 			cannon.power("right");
 		}
-		if(e.keyCode == 65){
+		if (e.keyCode == 65) {
 			cannon.power("left");
 		}
 	})
 
-	if(!start)startScreen();
+	if (!start) startScreen();
 
 }
