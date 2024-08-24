@@ -115,7 +115,7 @@ main h1{
     margin: 10px;
 }
 
-.game h2{
+.game h2, img{
     width: calc(100%-20px);
     border-bottom: 1px solid black;
     text-align: center;
