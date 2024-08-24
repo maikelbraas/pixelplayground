@@ -249,7 +249,6 @@ window.onload = function () {
 	}
 
 	function gameOver() {
-		showGameoverScreen();
 		let highscore = { highscore: kills * 100, game_id: 5 };
 		fetch('/games/highscore/highscore.php', {
 			method: 'POST',
@@ -265,6 +264,8 @@ window.onload = function () {
 			.catch(error => {
 				console.error('Error:', error);
 			});
+
+		showGameoverScreen();
 	}
 
 	function init() {
