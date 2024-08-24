@@ -13,7 +13,7 @@ if (document.location.href.includes('profile')) {
 
     function removeFriend(target) {
         let friendInvite = { id: target, state: "remove" };
-        fetch('/p4project-pixelplayground/partials/postDataToPixel.php', {
+        fetch('/partials/postDataToPixel.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -107,7 +107,7 @@ if (document.location.href.includes('friends')) {
     }
 
     function getFriendRequestData() {
-        fetch("/p4project-pixelplayground/partials/getDataFromPixel.php?soort=allRequests", { cache: 'no-cache' })
+        fetch("/partials/getDataFromPixel.php?soort=allRequests", { cache: 'no-cache' })
             .then((response) => {
                 if (!response.ok) { // Before parsing (i.e. decoding) the JSON data,
                     // check for any errors.
@@ -125,7 +125,7 @@ if (document.location.href.includes('friends')) {
     }
 
     function getUserData() {
-        fetch("/p4project-pixelplayground/partials/getDataFromPixel.php?soort=getUsers", { cache: 'no-cache' })
+        fetch("/partials/getDataFromPixel.php?soort=getUsers", { cache: 'no-cache' })
             .then((response) => {
                 if (!response.ok) { // Before parsing (i.e. decoding) the JSON data,
                     // check for any errors.
@@ -142,7 +142,7 @@ if (document.location.href.includes('friends')) {
     }
 
     function getFriendRequestsSend() {
-        fetch("/p4project-pixelplayground/partials/getDataFromPixel.php?soort=requestSend", { cache: 'no-cache' })
+        fetch("/partials/getDataFromPixel.php?soort=requestSend", { cache: 'no-cache' })
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Something went wrong!");
@@ -157,7 +157,7 @@ if (document.location.href.includes('friends')) {
 
     function addFriend(friend) {
         let friendInvite = { state: "addFriend", friendId: parseInt(friend) };
-        fetch('/p4project-pixelplayground/partials/postDataToPixel.php', {
+        fetch('/partials/postDataToPixel.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -178,7 +178,7 @@ if (document.location.href.includes('friends')) {
 
     function acceptRequest(target) {
         let friendInvite = { id: target, state: "accept" };
-        fetch('/p4project-pixelplayground/partials/postDataToPixel.php', {
+        fetch('/partials/postDataToPixel.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -197,7 +197,7 @@ if (document.location.href.includes('friends')) {
 
     function denyRequest(target) {
         let friendInvite = { id: target, state: "deny" };
-        fetch('/p4project-pixelplayground/partials/postDataToPixel.php', {
+        fetch('/partials/postDataToPixel.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
