@@ -235,33 +235,36 @@ window.onload = function () {
 	}
 
 	function gameOver() {
-		let highscore = { highscore: kills * 100, game_id: 5 };
-		fetch('/games/highscore/highscore.php', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify(highscore)
-		})
-			.then(response => response.text())
-			.then(data => {
-				console.log(data); // Log de respons van het PHP-bestand
-				// Voeg hier eventueel andere acties toe na ontvangst van de respons
-				ctx.fillStyle = "black";
-				ctx.fillRect(0, 0, w, h);
-				ctx.fillStyle = "#c1c1c1";
-				ctx.font = "60px Arial";
-				var text = "You Lost!";
-				var measure = ctx.measureText(text).width;
-				ctx.fillText("You Lost", w / 2 - measure / 2, h / 2 - 30);
-				var text = "Press enter to restart the game.";
-				var measureEnter = ctx.measureText(text).width;
-				ctx.fillText("Press enter to restart the game.", w / 2 - measureEnter / 2, h / 2 + 30);
-				clear();
+
+		ctx.fillStyle = "black";
+		ctx.fillRect(0, 0, w, h);
+		ctx.fillStyle = "#c1c1c1";
+		ctx.font = "60px Arial";
+		var text = "You Lost!";
+		var measure = ctx.measureText(text).width;
+		ctx.fillText("You Lost", w / 2 - measure / 2, h / 2 - 30);
+		var text = "Press enter to restart the game.";
+		var measureEnter = ctx.measureText(text).width;
+		ctx.fillText("Press enter to restart the game.", w / 2 - measureEnter / 2, h / 2 + 30);
+		clear();
+		if (start) {
+			start = false;
+			let highscore = { highscore: kills * 100, game_id: 5 };
+			fetch('/games/highscore/highscore.php', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(highscore)
 			})
-			.catch(error => {
-				console.error('Error:', error);
-			});
+				.then(response => response.text())
+				.then(data => {
+					console.log(data);
+				})
+				.catch(error => {
+					console.error('Error:', error);
+				});
+		}
 	}
 
 	function init() {
