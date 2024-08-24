@@ -26,6 +26,7 @@ window.onload = function(){
     var fire = false;
     var number = 0;
     var hit = false;
+    var level = 1;
 
     var fps = 1000/60;
 
