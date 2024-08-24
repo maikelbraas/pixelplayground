@@ -160,6 +160,9 @@ footer{
 
 #search-friends, #friend-request-send, #friend-request{
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .forms{
