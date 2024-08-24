@@ -1,9 +1,9 @@
-let win;
+
 if (document.cookie.includes('visitSite=iagree')) {
     document.getElementById('disclaimer').style.display = 'none';
 } else {
     if (!document.cookie.includes('visit=true')) {
-        win = open(location, '_self');
+        open(location, '_self');
         document.cookie = 'visit=true;';
     }
     let timerDiscplaimer = 4;
@@ -31,7 +31,7 @@ if (document.cookie.includes('visitSite=iagree')) {
         })
 
         disagree.addEventListener('click', () => {
-            win.close();
+            window.close();
         })
         clearInterval(interval);
     }, 5000)
