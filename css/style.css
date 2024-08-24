@@ -60,6 +60,7 @@ p, b, a{
 header, footer{
     height: calc(10vh - 1px);
     background-color: #ED6A5A;
+    bottom: 0;
 }
 
 header{
@@ -221,12 +222,19 @@ footer{
     gap: 10px;
 }
 
-@media screen AND (max-width: 480px){
+@media screen AND (max-width: 780px){
     
     #games{
         display: grid;
         justify-content: space-around;
         grid-template-columns: 90%;
         gap: 20px 0;
+    }
+
+    #index-messages{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: flex-start;
+        gap: 20px;
     }
 }
