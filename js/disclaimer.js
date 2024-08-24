@@ -1,10 +1,11 @@
-document.cookie = 'visit=true;';
 let win;
-if (!document.cookie.includes('visit'))
-    win = open(location, '_self');
-if (document.cookie.includes('visitSite=iagree'))
+if (document.cookie.includes('visitSite=iagree')) {
     document.getElementById('disclaimer').style.display = 'none';
-else {
+} else {
+    if (!document.cookie.includes('visit=true')) {
+        win = open(location, '_self');
+        document.cookie = 'visit=true;';
+    }
     let timerDiscplaimer = 4;
     let interval = setInterval(() => {
         document.getElementById('timer').innerHTML = "You can agree or disagree in: " + timerDiscplaimer;
@@ -34,5 +35,4 @@ else {
         })
         clearInterval(interval);
     }, 5000)
-
 }
