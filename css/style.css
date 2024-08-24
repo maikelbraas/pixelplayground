@@ -247,8 +247,9 @@ footer{
 .user-card{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 10px;
-    width: 100px;
+    width: 250px;
 }
 
 @media screen AND (max-width: 780px){
