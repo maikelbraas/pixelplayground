@@ -21,8 +21,8 @@ $games = [
         <?php foreach($games as $game){ ?>
         <a href="games/<?= $game->name ?>/index.php">
             <article class="game">
-                <h2><?= $game->name ?></h2>
-                <img src="images/<?= $game->displayname ?>.png" alt="">
+                <h2><?= $game->displayname ?></h2>
+                <img src="images/<?= $game->name ?>.png" alt="">
                 <b>Worden scores opgeslagen: <i><?php if($game->highscorecapable) echo 'Ja'; else echo 'Nee'; ?></i></b>
             </article>
         </a>
