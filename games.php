@@ -1,18 +1,18 @@
 <?php require_once 'partials/header.php'; ?>
 <?php  
 $games = [
-    (object)["name" => 'blockchase'],
-    (object)["name" => 'connect'],
-    (object)["name" => 'flappy'],
-    (object)["name" => 'galgje'],
-    (object)["name" => 'goalie'],
-    (object)["name" => 'shootball'],
-    (object)["name" => 'shootThePig'],
-    (object)["name" => 'snake'],
-    (object)["name" => 'spacelite'],
-    (object)["name" => 'tictactoe'],
-    (object)["name" => 'wordle'],
-    (object)["name" => 'breakout']
+    (object)["name" => 'blockchase', 'highscorecapable' => false],
+    (object)["name" => 'connect', 'highscorecapable' => true],
+    (object)["name" => 'flappy', 'highscorecapable' => false],
+    (object)["name" => 'galgje', 'highscorecapable' => true],
+    (object)["name" => 'goalie', 'highscorecapable' => false],
+    (object)["name" => 'shootball', 'highscorecapable' => false],
+    (object)["name" => 'shootThePig', 'highscorecapable' => true],
+    (object)["name" => 'snake', 'highscorecapable' => false],
+    (object)["name" => 'spacelite', 'highscorecapable' => false],
+    (object)["name" => 'tictactoe', 'highscorecapable' => true],
+    (object)["name" => 'wordle', 'highscorecapable' => true],
+    (object)["name" => 'breakout', 'highscorecapable' => false]
 ];
 ?>
 <main>
@@ -23,6 +23,7 @@ $games = [
             <article class="game">
                 <h2><?= $game->name ?></h2>
                 <img src="images/<?= $game->name ?>.png" alt="">
+                <p>Highscore aan? <?php if($game->highscorecapable) echo 'Ja'; else echo 'Nee'; ?></p>
             </article>
         </a>
         <?php } ?>
