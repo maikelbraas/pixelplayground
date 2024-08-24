@@ -115,10 +115,14 @@ main h1{
     margin: 10px;
 }
 
-.game h2, img{
+.game h2{
     width: calc(100%-20px);
     border-bottom: 1px solid black;
     text-align: center;
+}
+.game img{
+    width: 100%;
+    border-bottom: 1px solid black;
 }
 .game b{
     padding: 10px;
