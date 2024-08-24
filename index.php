@@ -4,7 +4,6 @@
     <h1>Welcome!</h1>
     <section id="index-messages">
         <article class="message">
-            <h2>Welcome!</h2>
             <p>Dit is een website om spelletjes te spelen met vrienden.</p>
             <p>Je kunt ook met je vrienden toernooien maken! Nodig er een paar uit!</p>
             <p>Laat zien wat je kan bij de verschillende games, word jij de uiteindelijke winaar?</p>

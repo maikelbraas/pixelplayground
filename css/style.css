@@ -200,7 +200,7 @@ footer{
 #index-messages{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    place-items: center;
+    justify-content: center;
 }
 
 #profile-page{
