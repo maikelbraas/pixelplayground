@@ -17,12 +17,10 @@ else {
             `;
         const agree = document.getElementById('agree');
         const disagree = document.getElementById('disagree');
-        let now = new Date();
-        var newDateObj = new Date(now.getTime() + 20 * 1000);
-        now.setTime(now.getTime() + (20 * 1000))
-        console.log(newDateObj);
+        let now = Date.now();
+        console.log(now);
         agree.addEventListener('click', () => {
-            document.cookie = `visitSite=iagree; secure=true; Max-Age=${newDateObj}; sameSite=strict;`
+            document.cookie = `visitSite=iagree; secure=true; max-age=${now}; sameSite=strict;`
             document.getElementById('disclaimer').style.display = 'none';
         })
 
