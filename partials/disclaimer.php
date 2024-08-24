@@ -4,6 +4,7 @@
     <b>This site is not secure, it is an example website for first year programming students.</b>
     <b>Encryption hasn't been thought at this stage.</b>
     <b>If you create an account be aware of this. All password are visible.</b>
+    <h2>You're be reminded every hour after accepting!</h2>
     <div>
         <button id='agree'>I agree</button>
         <button id='disagree'>I do not agree</button>
