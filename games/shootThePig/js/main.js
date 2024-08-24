@@ -103,7 +103,10 @@ window.onload = function () {
 		}
 		powerMeter.draw(cannon.vel);
 
-		if (lifes <= 0 && start) gameOver();
+		if (lifes <= 0 && start) {
+			showGameoverScreen();
+			gameOver();
+		};
 		requestAnimationFrame(animationloop);
 	}
 
@@ -264,8 +267,6 @@ window.onload = function () {
 			.catch(error => {
 				console.error('Error:', error);
 			});
-
-		showGameoverScreen();
 	}
 
 	function init() {
