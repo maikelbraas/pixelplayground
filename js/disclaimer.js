@@ -26,7 +26,7 @@ else {
         })
 
         disagree.addEventListener('click', () => {
-            window.close();
+            open(location, '_self').close();
         })
         clearInterval(interval);
     }, 5000)
