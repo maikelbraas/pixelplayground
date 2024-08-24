@@ -4,7 +4,7 @@
       <p>Student example website - 1st year, last project</p>
       <p>Main purpose: CRUD, Game logic</p>
    </footer> 
-<?php require_once './disclaimer.php'; ?>
+<?php require_once '/partials/disclaimer.php'; ?>
 <script src="/js/disclaimer.js" defer></script>
 </body>
 </html>
