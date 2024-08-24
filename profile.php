@@ -33,9 +33,9 @@ if(isset($_POST['change_password'])){
         <h3>Change password:</h3>
         <form method="post">
             <label for="password">New password:</label><br>
-            <input type="password" name="password" autocomplete="off" data-1p-ignore data-lpignore="true"><br>
+            <input type="password" name="password" autocomplete="off" autocomplete="new-password"><br>
             <label for="conf-password">Confirm new password:</label><br>
-            <input type="password" name="passwordConf" autocomplete="off" style="margin-bottom: 20px;" data-1p-ignore data-lpignore="true">
+            <input type="password" name="passwordConf" autocomplete="off" style="margin-bottom: 20px;" autocomplete="new-password">
             <input type="submit" value="Change" name="change_password">
         </form>
     </section>
@@ -43,7 +43,7 @@ if(isset($_POST['change_password'])){
         <h3>Change username:</h3>
         <form method="post">
             <label for="new-username">New username: </label><br>
-            <input type="text" name="new-username" value="<?= $user['gebruikersnaam']; ?>" autocomplete="off" data-1p-ignore data-lpignore="true">
+            <input type="text" name="new-username" value="<?= $user['gebruikersnaam']; ?>" autocomplete="new-username">
             <input type="submit" value="Change" name="change_username">
         </form>
     </section>
