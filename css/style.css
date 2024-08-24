@@ -120,6 +120,9 @@ main h1{
     border-bottom: 1px solid black;
     text-align: center;
 }
+.game b{
+    padding: 10px;
+}
 
 .game:hover {
     border: 1px solid #5CA4A9;
