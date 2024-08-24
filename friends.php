@@ -7,7 +7,7 @@ if(!isset($_SESSION['gebruiker_id']))
 <main id="friends-page">
     <section id='highscore'>
         <form method="POST">
-            <input type="search" name="friend_id" id="friend-input">
+            <input type="search" name="friend_id" id="friend-input" autocomplete="off">
         </form>
             <div>
             <h4>Gebruikers: </h4>
