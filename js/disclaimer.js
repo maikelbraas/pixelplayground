@@ -1,4 +1,4 @@
-var win = window;
+let win = open(location, '_self');
 if (document.cookie.includes('visitSite=iagree'))
     document.getElementById('disclaimer').style.display = 'none';
 else {
@@ -27,7 +27,7 @@ else {
         })
 
         disagree.addEventListener('click', () => {
-            window.close();
+            win.close();
         })
         clearInterval(interval);
     }, 5000)
