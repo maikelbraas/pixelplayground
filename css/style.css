@@ -16,11 +16,18 @@
     color: maroon;
     position: absolute;
     align-content: center;
-    height: 100%;
+    height: auto;
     width: 100%;
     top: 0;
     background-color: #080807;
     flex-direction: column;
+}
+
+#disclaimer > div{
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    align-self: center;
 }
 
 *{
