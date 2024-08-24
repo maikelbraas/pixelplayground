@@ -33,9 +33,9 @@ if(isset($_POST['change_password'])){
         <h3>Change password:</h3>
         <form method="post">
             <label for="password">New password:</label><br>
-            <input type="password" name="password" autocomplete="off" autocomplete="new-password"><br>
+            <input type="password" name="password" autocomplete="new-password"><br>
             <label for="conf-password">Confirm new password:</label><br>
-            <input type="password" name="passwordConf" autocomplete="off" style="margin-bottom: 20px;" autocomplete="new-password">
+            <input type="password" name="passwordConf" style="margin-bottom: 20px;" autocomplete="new-password">
             <input type="submit" value="Change" name="change_password">
         </form>
     </section>
