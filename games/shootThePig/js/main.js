@@ -256,7 +256,8 @@ window.onload = function () {
 
 	function gameOver() {
 		gameOverStatus = true;
-		let highscore = { highscore: kills * 100, game_id: 5 };
+		let score = (kills * 100) + ((kills - shots) * 50);
+		let highscore = { highscore: score, game_id: 5 };
 		fetch('/games/highscore/highscore.php', {
 			method: 'POST',
 			headers: {
