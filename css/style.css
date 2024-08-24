@@ -60,6 +60,7 @@ p, b, a{
 header, footer{
     min-height: calc(10vh - 1px);
     background-color: #212529;
+    color: #d5d1dd;
     bottom: 0;
 }
 
@@ -79,11 +80,11 @@ nav{
 
 a{
     text-decoration: none;
-    color: black;
+    color: #d5d1dd;
 }
 
 nav a:hover{
-    color: grey;
+    color: #a52312;
 }
 
 main{
