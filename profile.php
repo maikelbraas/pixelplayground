@@ -35,7 +35,7 @@ if(isset($_POST['change_password'])){
             <label for="password">New password:</label><br>
             <input type="password" name="password" autocomplete="off"><br>
             <label for="conf-password">Confirm new password:</label><br>
-            <input type="password" name="passwordConf" autocomplete="off">
+            <input type="password" name="passwordConf" autocomplete="off" style="margin-bottom: 20px;">
             <input type="submit" value="Change" name="change_password">
         </form>
     </section>
