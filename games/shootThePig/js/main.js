@@ -248,7 +248,7 @@ window.onload = function () {
 		ctx.fillText("You Lost", w / 2 - measure / 2, h / 2 - 30);
 		var text = "Press enter to restart the game.";
 		var measureEnter = ctx.measureText(text).width;
-		ctx.fillText("Press enter to restart the game.", w / 2 - measureEnter / 2, h / 2 + 30);
+		ctx.fillText(text, w / 2 - measureEnter / 2, h / 2 + 30);
 		clear();
 	}
 
