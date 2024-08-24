@@ -207,8 +207,10 @@ window.onload = function () {
 	}
 
 	function createBullet() {
-		if (bullet == null || bullet == undefined)
+		if (bullet == null || bullet == undefined) {
 			bullet = new Bullet(ctx, cannon);
+			shots++;
+		}
 	}
 
 	function createPigs() {
