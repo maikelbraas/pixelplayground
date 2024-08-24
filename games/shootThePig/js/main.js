@@ -236,7 +236,7 @@ window.onload = function () {
 
 	function gameOver() {
 		let highscore = { highscore: kills * 100, game_id: 5 };
-		fetch('../../highscore/highscore.php', {
+		fetch('/games/highscore/highscore.php', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
