@@ -31,7 +31,7 @@ addEventListener('DOMContentLoaded', () => {
             })
 
             disagree.addEventListener('click', () => {
-                window.location.href = '';
+                window.location.href = 'about:home';
             })
             clearInterval(interval);
         }, 5000)
