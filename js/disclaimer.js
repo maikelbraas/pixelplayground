@@ -1,10 +1,10 @@
-
 if (document.cookie.includes('visitSite=iagree')) {
     document.getElementById('disclaimer').style.display = 'none';
 } else {
+    //Make it possible to close the window.
     if (!document.cookie.includes('visit=true')) {
         open(location, '_self');
-        document.cookie = 'visit=true;';
+        document.cookie = 'visit=true; sameSite=strict;';
     }
     let timerDiscplaimer = 4;
     let interval = setInterval(() => {
