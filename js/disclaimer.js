@@ -34,6 +34,7 @@ addEventListener('DOMContentLoaded', () => {
 
             disagree.addEventListener('click', () => {
                 window.close();
+                window.location.href = '';
             })
             clearInterval(interval);
         }, 5000)
