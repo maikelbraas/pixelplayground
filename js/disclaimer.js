@@ -4,6 +4,7 @@ addEventListener('DOMContentLoaded', () => {
     } else {
         //Make it possible to close the window.
         if (!document.cookie.includes('visit=true')) {
+            console.log('here', location);
             open(location, '_self');
             document.cookie = 'visit=true; sameSite=strict;';
         }
