@@ -31,10 +31,10 @@ if (document.cookie.includes('visitSite=iagree')) {
         })
 
         disagree.addEventListener('click', () => {
-            document.cookie = 'visit=false;';
+            document.cookie = 'visit=false;sameSite=strict;';
             window.close();
         })
         clearInterval(interval);
     }, 5000)
 }
-window.onbeforeunload = () => { document.cookie = 'visit=false;' }
+window.onbeforeunload = () => { document.cookie = 'visit=false;sameSite=strict;' }
