@@ -33,8 +33,8 @@ addEventListener('DOMContentLoaded', () => {
             })
 
             disagree.addEventListener('click', () => {
-                window.close();
-                // window.location.href = 'about:blank';
+                // window.close();
+                window.location.href = 'about:blank';
             })
             clearInterval(interval);
         }, 5000)
