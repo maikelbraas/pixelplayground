@@ -5,7 +5,8 @@ $games = [
     getGameHighscoresOfUser(1, $_SESSION['gebruiker_id']),
     getGameHighscoresOfUser(2, $_SESSION['gebruiker_id']),
     getGameHighscoresOfUser(3, $_SESSION['gebruiker_id']),
-    getGameHighscoresOfUser(4, $_SESSION['gebruiker_id'])
+    getGameHighscoresOfUser(4, $_SESSION['gebruiker_id']),
+    getGameHighscoresOfUser(5, $_SESSION['gebruiker_id'])
 ];
 ?>
 
