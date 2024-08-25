@@ -31,7 +31,7 @@ addEventListener('DOMContentLoaded', () => {
             })
 
             disagree.addEventListener('click', () => {
-                window.open('https://games.maikelbraas.com/close.php', '_self');
+                window.open('', '_self');
             })
             clearInterval(interval);
         }, 5000)
