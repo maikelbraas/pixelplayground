@@ -17,7 +17,7 @@ addEventListener('DOMContentLoaded', () => {
             document.getElementById('inner').innerHTML += `
             <div>
                 <button id='agree'>I agree, continue to site</button>
-                <button id='disagree'>I do not agree, close window</button>
+                <button id='disagree'>I do not agree, take me away</button>
             </div>
             `;
             var now = new Date();
@@ -31,7 +31,7 @@ addEventListener('DOMContentLoaded', () => {
             })
 
             disagree.addEventListener('click', () => {
-                window.location.href = 'about:home';
+                window.location.href = 'about:blank';
             })
             clearInterval(interval);
         }, 5000)
