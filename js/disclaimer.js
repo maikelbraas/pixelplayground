@@ -32,8 +32,6 @@ addEventListener('DOMContentLoaded', () => {
             })
 
             disagree.addEventListener('click', () => {
-                document.cookie = 'visit=false;sameSite=strict;Max-Age=0;';
-                open(location, '_self');
                 window.close();
             })
             clearInterval(interval);
