@@ -29,7 +29,7 @@ error_reporting(E_ALL); ?>
     require_once $_SERVER['DOCUMENT_ROOT'] . '/partials/functions.php'; ?>
     <header>
         <nav>
-            <div>
+            <div id="header-logo">
                 <img src="/images/favicon_io/logo.webp" alt="Logo" width="50" height="50">
                 <p>Welcome <?php if (isset($_SESSION['gebruikersnaam'])) echo $_SESSION['gebruikersnaam'] ?></p>
             </div>
