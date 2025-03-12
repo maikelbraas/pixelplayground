@@ -3,7 +3,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL); ?>
 
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8" />
