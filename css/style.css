@@ -190,6 +190,7 @@ main h1 {
 #header-logo {
   display: flex;
   place-items: center;
+  place-self: flex-start;
 }
 
 footer {
