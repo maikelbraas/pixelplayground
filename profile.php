@@ -1,5 +1,5 @@
-<?php require_once 'partials/header.php'; 
-if(!isset($_SESSION['gebruiker_id']))
+<?php require_once 'partials/header.php';
+if (!isset($_SESSION['gebruiker_id']))
     header("Location: login.php");
 
 $user = getUserById($_SESSION['gebruiker_id']);
@@ -10,10 +10,10 @@ $games = [
     getGameHighscoresOfUser(4, $_SESSION['gebruiker_id'])
 ];
 
-if(isset($_POST['change_username'])){
+if (isset($_POST['change_username'])) {
     changeUsername($_POST['new-username']);
 }
-if(isset($_POST['change_password'])){
+if (isset($_POST['change_password'])) {
     echo changePassword($_SESSION['gebruiker_id'], $_POST, '');
 }
 ?>
@@ -25,7 +25,7 @@ if(isset($_POST['change_password'])){
     </section>
     <section id="own-friends-container">
         <h3>Friends:</h3>
-        <?php foreach(getAllFriends($_SESSION['gebruiker_id']) as $friend){ ?>
+        <?php foreach (getAllFriends($_SESSION['gebruiker_id']) as $friend) { ?>
             <p><?= $friend['gebruikersnaam'] ?> <button id="<?= $friend['id'] ?>">Remove</button></p>
         <?php } ?>
     </section>
@@ -41,7 +41,7 @@ if(isset($_POST['change_password'])){
     </section>
     <section>
         <h3>Change username:</h3>
-        <form method="post">
+        <form method="post" id="change-name-container">
             <label for="new-username">New username: </label><br>
             <input type="text" name="new-username" value="<?= $user['gebruikersnaam']; ?>" autocomplete="username">
             <input type="submit" value="Change" name="change_username">
