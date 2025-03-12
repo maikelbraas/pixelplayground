@@ -1,9 +1,15 @@
 let lightOrDark = document.getElementById('light-or-dark');
 
+document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))
+if (localStorage.getItem('theme') == "light") {
+    lightOrDark.checked = true
+}
 lightOrDark.addEventListener('click', (event) => {
     if (event.target.checked) {
+        localStorage.setItem('theme', 'light')
         document.documentElement.setAttribute('data-theme', 'light')
     } else {
+        localStorage.setItem('theme', 'dark')
         document.documentElement.setAttribute('data-theme', 'dark')
 
     }
