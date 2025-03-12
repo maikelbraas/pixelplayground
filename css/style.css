@@ -1,3 +1,21 @@
+html {
+  --bgColorBtn: #080807;
+  --bg: #1e1e1e;
+  --bgSecond: #212529;
+  --accent: #569fa4;
+  --accentSecond: #a52312;
+  --color: #d5d1dd;
+}
+
+html[data-theme="light"] {
+  --bgColorBtn: #c1c1c1;
+  --bg: white;
+  --bgSecond: #ed6a5a;
+  --accent: #569fa4;
+  --accentSecond: #a52312;
+  --color: black;
+}
+
 @font-face {
   font-family: gameTekst;
   src: url(KnightWarrior-w16n8.otf);
@@ -19,7 +37,7 @@
   height: 100%;
   width: 100%;
   top: 0;
-  background-color: #080807;
+  background-color: var(--bgColorBtn);
   flex-direction: column;
   overflow: hidden;
 }
@@ -40,8 +58,8 @@
 * {
   margin: 0;
   padding: 0;
-  color: #d5d1dd;
-  border-color: #569fa4;
+  color: var(--color);
+  border-color: var(--accent);
 }
 textarea:focus,
 input:focus {
@@ -52,12 +70,12 @@ input:focus {
 
 input,
 button {
-  background-color: #080807;
+  background-color: var(--bgColorBtn);
   padding: 5px;
 }
 
 .darkmode {
-  background-color: #080807;
+  background-color: var(--bgColorBtn);
   color: #ebebea;
 }
 
@@ -102,14 +120,14 @@ a {
 header,
 footer {
   min-height: calc(10vh - 1px);
-  background-color: #212529;
+  background-color: var(--bgSecond);
   color: #d5d1dd;
 }
 
 header {
   display: grid;
   align-items: center;
-  border-bottom: 1px solid #569fa4;
+  border-bottom: 1px solid var(--accent);
 }
 
 nav {
@@ -123,11 +141,11 @@ nav {
 
 a {
   text-decoration: none;
-  color: #d5d1dd;
+  color: var(--color);
 }
 
 nav a:hover {
-  color: #a52312;
+  color: var(--accentSecond);
 }
 
 main {
@@ -156,7 +174,7 @@ main h1 {
   border: 1px solid black;
   width: 100%;
   margin: 10px 0;
-  background-color: #080807;
+  background-color: var(--bgColorBtn);
 }
 
 .game h2 {
@@ -174,8 +192,8 @@ main h1 {
 }
 
 .game:hover {
-  border: 1px solid #569fa4;
-  background-color: #212529;
+  border: 1px solid var(--accent);
+  background-color: var(--bgSecond);
 }
 
 .game p,
@@ -198,7 +216,7 @@ footer {
   align-items: center;
   justify-content: space-around;
   padding: 0 20px;
-  border-top: 1px solid #569fa4;
+  border-top: 1px solid var(--accent);
 }
 
 #search-friends,
