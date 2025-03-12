@@ -1,4 +1,13 @@
+let lightOrDark = document.getElementById('light-or-dark');
 
+lightOrDark.addEventListener('click', (event) => {
+    if (event.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'light')
+    } else {
+        document.documentElement.setAttribute('data-theme', 'dark')
+
+    }
+})
 
 if (document.location.href.includes('profile')) {
     let ownFriendsContainer = document.getElementById('own-friends-container')
