@@ -50,6 +50,5 @@ error_reporting(E_ALL); ?>
             <?php } else { ?>
                 <a href="/partials/logout.php">Logout</a>
             <?php } ?>
-            <input type="checkbox" name="" id="light-or-dark">
         </nav>
     </header>

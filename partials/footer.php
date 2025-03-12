@@ -1,10 +1,11 @@
-
-   <footer>
+<footer>
    <a href="/"><img src="/images/favicon_io/logo.webp" alt="Logo" width="50" height="50"></a>
-      <p>Student example website - 1st year, last project</p>
-      <p>Main purpose: Vulnerabilities, CRUD, Game logic</p>
-   </footer> 
+   <p>Student example website - 1st year, last project</p>
+   <p>Main purpose: Vulnerabilities, CRUD, Game logic</p>
+   <input type="checkbox" name="" id="light-or-dark">
+</footer>
 <?php require_once 'partials/disclaimer.php'; ?>
 <script src="/js/disclaimer.js" defer></script>
 </body>
+
 </html>
