@@ -92,7 +92,7 @@ button {
 }
 
 body {
-  background-color: #1e1e1e;
+  background-color: var(--bg);
 }
 
 h1,
