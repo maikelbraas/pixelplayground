@@ -28,6 +28,13 @@ if (document.location.href.includes('profile')) {
                 console.error('Error:', error);
             });
     }
+
+    let changeName = document.getElementById('change-name-container');
+    changeName.addEventListener('submit', (event) => {
+        if (!confirm('Weet je zeker dat je, je naam wilt veranderen?')) {
+            event.preventDefault();
+        }
+    })
 }
 
 if (document.location.href.includes('friends')) {
@@ -63,6 +70,8 @@ if (document.location.href.includes('friends')) {
             }
         }
     })
+
+
 
 
     function searchFriend(event) {
