@@ -25,13 +25,14 @@ error_reporting(E_ALL); ?>
 
 <body>
     <?php session_start();
-    //fsdfdsfsd
 
     require_once $_SERVER['DOCUMENT_ROOT'] . '/partials/functions.php'; ?>
     <header>
         <nav>
-            <img src="/images/favicon_io/logo.webp" alt="Logo" width="50" height="50">
-            <p>Welcome <?php if (isset($_SESSION['gebruikersnaam'])) echo $_SESSION['gebruikersnaam'] ?></p>
+            <div>
+                <img src="/images/favicon_io/logo.webp" alt="Logo" width="50" height="50">
+                <p>Welcome <?php if (isset($_SESSION['gebruikersnaam'])) echo $_SESSION['gebruikersnaam'] ?></p>
+            </div>
             <a href="/index.php">Home</a>
             <a href="/games.php">Games</a>
             <?php if (checkLogin()) { ?>
