@@ -1,5 +1,5 @@
 <?php require_once 'partials/header.php'; ?>
-<?php  
+<?php
 $games = [
     (object)["name" => 'blockchase', 'displayname' => 'Block chase', 'highscorecapable' => false],
     (object)["name" => 'connect', 'displayname' => 'Connect 4', 'highscorecapable' => true],
@@ -10,7 +10,7 @@ $games = [
     (object)["name" => 'shootThePig', 'displayname' => 'Shoot the pigs', 'highscorecapable' => true],
     (object)["name" => 'snake', 'displayname' => 'Snake', 'highscorecapable' => false],
     (object)["name" => 'spacelite', 'displayname' => 'Space lite', 'highscorecapable' => false],
-    (object)["name" => 'tictactoe', 'displayname' => 'Tic Tac Toe', 'highscorecapable' => true],
+    (object)["name" => 'tictactoe', 'displayname' => 'Tic Tac Toe', 'highscorecapable' => false],
     (object)["name" => 'wordle', 'displayname' => 'Wordle', 'highscorecapable' => true],
     (object)["name" => 'breakout', 'displayname' => 'Breakout', 'highscorecapable' => false]
 ];
@@ -18,16 +18,17 @@ $games = [
 <main>
     <h1>All games</h1>
     <section id="games">
-        <?php foreach($games as $game){ ?>
-        <a href="games/<?= $game->name ?>/index.php">
-            <article class="game">
-                <h2><?= $game->displayname ?></h2>
-                <img src="images/<?= $game->name ?>.png" alt="">
-                <b>Worden scores opgeslagen: <i><?php if($game->highscorecapable) echo 'Ja'; else echo 'Nee'; ?></i></b>
-            </article>
-        </a>
+        <?php foreach ($games as $game) { ?>
+            <a href="games/<?= $game->name ?>/index.php">
+                <article class="game">
+                    <h2><?= $game->displayname ?></h2>
+                    <img src="images/<?= $game->name ?>.png" alt="">
+                    <b>Worden scores opgeslagen: <i><?php if ($game->highscorecapable) echo 'Ja';
+                                                    else echo 'Nee'; ?></i></b>
+                </article>
+            </a>
         <?php } ?>
-        
+
     </section>
 </main>
 
